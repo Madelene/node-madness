@@ -4,8 +4,9 @@
   "description": "my first node project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test": "mocha test",
+    "start": "node index.js",
+    "my-custom-script": "echo This Is Fun!"
   },
   "author": "Madelene Campos",
   "license": "ISC",

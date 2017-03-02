@@ -1,16 +1,14 @@
 require('./app/index')
 
-const http = require('http')
+const express = require('express')
+const app = express()
 const port = 3000
 
-const requestHandler = (request, response) => {
-	console.log(request.url)
-	response.end("Maddie's first Node Server!")
-}
+app.get('/', (request, response) => {
+  response.send("Maddie's first Express server!")
+})
 
-const server = http.createServer(requestHandler)
-
-server.listen(port, (err) => {
+app.listen(port, (err) => {
   if (err) {
     return console.log('something bad happened', err)
   }

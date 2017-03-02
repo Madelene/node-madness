@@ -24,3 +24,24 @@ function isBiggerThanTwo (num) {
 
 numbers.filter(isBiggerThanTwo)
 
+// #########################################
+
+function stats (file) {
+  return new Promise((resolve, reject) => {
+    fs.stat(file, (err, data) => {
+      if (err) {
+        return reject (err)
+      }
+      resolve(data)
+    })
+  })
+}
+
+Promise.all([  // The Promise object is used for deferred and asynchronous computations. 
+  stats(‘file1’),
+  stats(‘file2’),
+  stats(‘file3’)
+])
+.then((data) => console.log(data))
+.catch((err) => console.log(err))
+
